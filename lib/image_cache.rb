@@ -1,5 +1,6 @@
 require 'uuidtools'
 require 'fileutils'
+require 'cgi'
 
 class ImageCache
   Version = '1.0.0'
@@ -74,7 +75,6 @@ class ImageCache
       end
 
       return new(key, path=nil)
-      #raise(ArgumentError, "no cache or image found under #{ key.inspect }")
     end
 
     def finalizer(object_id)

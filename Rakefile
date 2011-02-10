@@ -126,6 +126,7 @@ task :gemspec do
             spec.test_files = #{ test_files.inspect }
 
           # spec.add_dependency 'lib', '>= version'
+            spec.add_dependency 'uuidtools'
 
             spec.extensions.push(*#{ extensions.inspect })
 
