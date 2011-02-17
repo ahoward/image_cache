@@ -177,12 +177,13 @@ class ImageCache
   end
 end
 
-Image_cache = ImageCache
+Image_cache = ImageCache unless defined?(Image_cache)
 
 if defined?(Rails.env)
   unless Rails.env.production?
     if defined?(unloadable)
       unloadable(ImageCache)
+      unloadable(Image_cache)
     end
   end
 end

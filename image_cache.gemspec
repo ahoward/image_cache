@@ -8,7 +8,7 @@ Gem::Specification::new do |spec|
   spec.summary = "image_cache"
   spec.description = "description: image_cache kicks the ass"
 
-  spec.files = ["lib", "lib/image_cache.rb", "Rakefile", "README"]
+  spec.files = ["image_cache.gemspec", "lib", "lib/image_cache.rb", "Rakefile", "README"]
   spec.executables = []
   
   spec.require_path = "lib"
@@ -17,6 +17,7 @@ Gem::Specification::new do |spec|
   spec.test_files = nil
 
 # spec.add_dependency 'lib', '>= version'
+  spec.add_dependency 'uuidtools'
 
   spec.extensions.push(*[])
 
