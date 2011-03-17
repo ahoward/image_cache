@@ -157,13 +157,17 @@ class ImageCache
     File.join(ImageCache.url, @value) if @value
   end
 
+  module HtmlSafe
+    def html_safe() self end
+    def html_safe?() self end
+  end
+
   def raw(*args)
     string = args.join
-    if string.respond_to?(:html_safe)
-      string.html_safe
-    else
-      string
+    unless string.respond_to?(:html_safe)
+      string.extend(HtmlSafe)
     end
+    string.html_safe
   end
 
   def clear!
